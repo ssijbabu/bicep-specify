@@ -1,7 +1,7 @@
 {
-	"image": "mcr.microsoft.com/devcontainers/universal:2",
+	"image": "mcr.microsoft.com/devcontainers/universal:latest",
 	"features": {
-		"ghcr.io/va-h/devcontainers-features/uv:1": {}
+		"ghcr.io/va-h/devcontainers-features/uv": "latest"
 	},
 	"postCreateCommand": "bash scripts/install-dependencies.sh"
 }
