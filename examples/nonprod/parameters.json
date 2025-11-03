@@ -1,0 +1,9 @@
+{
+  "hubName": "pz-hub-nonprod",
+  "addressSpace": "10.10.0.0/16",
+  "location": "nznorth",
+  "tags": {
+    "environment": "nonprod",
+    "owner": "platform-team"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "hubName": "pz-hub-prod",
+  "addressSpace": "10.20.0.0/16",
+  "location": "nznorth",
+  "tags": {
+    "environment": "prod",
+    "owner": "platform-team"
+  }
+}

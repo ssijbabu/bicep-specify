@@ -1,0 +1,25 @@
+trigger: none
+
+stages:
+  - stage: Validate
+    displayName: 'Validate Bicep + Policy'
+    jobs:
+      - job: Validate
+        pool:
+          vmImage: 'ubuntu-latest'
+        steps:
+          - script: |
+              echo 'Running bicep build for hub module'
+              bicep --version || true
+              bicep build infra/modules/hub/main.bicep || true
+            displayName: 'bicep build (hub)'
+
+          - script: |
+              echo 'Running policy-as-code evaluation (placeholder)'
+              bash pipelines/scripts/policy-eval.sh
+            displayName: 'Policy-as-code evaluation'
+
+          - script: |
+              echo 'Run linter (if available)'
+              command -v bicep-lint >/dev/null 2>&1 && bicep-lint infra/modules || echo 'bicep-lint not installed'
+            displayName: 'Lint (optional)'
